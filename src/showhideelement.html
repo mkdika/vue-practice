@@ -5,28 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue | 2 Way Binding</title>
+    <title>Document</title>
 </head>
 
 <body>
     <div id='app'>
-        Input your Name: <input type="text" v-model="name">
-        <br/>
-        <h3>Your Name: {{ name }}</h3>
-        <br/><br/>
-        Lazy binding will triggred when lost focus from component.
-        Input your Name (Lazy): <input type="text" v-model.lazy="name2">
-        <br/>
-        <h3>Your Name (lazy): {{ name2 }}</h3>
-        <br/><br/>
+        <p v-show="isNinja">Invisible like a Ninja!</p>
+        <p v-show="!isNinja">Here I am!</p>
+        <button v-on:click="isNinja = !isNinja">Toggle Ninja Skills</button>
     </div>
     <script src='https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js'></script>
     <script type='text/javascript'>
         new Vue({
             el: '#app',
             data: {
-                name:  '',
-                name2: ''
+                isNinja: true
             }
         })
     </script>

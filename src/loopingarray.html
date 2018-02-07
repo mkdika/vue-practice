@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <h1>Movies</h1>
+        <ul>
+            <li v-for="m in movieTitles">{{ m }}</li>
+        </ul>
+        <h1>Employee</h1>
+        <ul>
+            <li v-for="e in employees">{{ e.name + ' | ' + e.title }}</li>
+        </ul>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js'></script>
+    <script type='text/javascript'>
+        new Vue({
+            el: '#app',
+            data: {
+                movieTitles: ['The Matrix', 'The Matrix Reloaded', 'The Matrix Revolutions'],
+                employees: [
+                    { name: 'Abby', title: 'Accountant' },
+                    { name: 'Andy', title: 'Marketing Manager' },
+                    { name: 'Brandon', title: 'Vue.js Expert' },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
