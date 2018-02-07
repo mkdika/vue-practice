@@ -5,22 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue | Secure HTML Elements</title>
+    <title>Vue | Conditional</title>
 </head>
 
 <body>
     <div id='app'>
-        <div v-html="html"></div>
-        <br/>
-        By default vue will not render the HTML/JS Element using directives.<br/>
-        Instead use v-html directives.
+        <p v-if="stock > 10 ">{{ stock }} in stock.</p>
+        <p v-else-if="stock > 0">Hurry up, there are just a few items left!</p>
+        <p v-else>Too bad, we're all out!</p>
+
+        <template v-if="stock > 50">
+            <p>We have a lot of stock..offer now to claim your 20% discount!</p>
+        </template>
     </div>
     <script src='https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js'></script>
     <script type='text/javascript'>
         new Vue({
             el: '#app',
             data: {
-                html: '<h1>Hello World</h1>'
+                stock: 51
             }
         })
     </script>

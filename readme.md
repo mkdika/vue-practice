@@ -4,4 +4,4 @@
 Sample & code snippets for Vue.JS practice.
 
 ### Relevant Article & References
-- [Vue.JS 2 Guide](https://vuejs.org/v2/guide/)
+- [Vue.JS 2 Official Guide](https://vuejs.org/v2/guide/)
