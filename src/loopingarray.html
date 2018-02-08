@@ -12,7 +12,7 @@
     <div id='app'>
         <h1>Movies</h1>
         <ul>
-            <li v-for="m in movieTitles">{{ m }}</li>
+            <li v-for="(m,index) in movieTitles">{{ index }}. {{ m }}</li>
         </ul>
         <h1>Employee</h1>
         <ul>
