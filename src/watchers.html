@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue | Watchers</title>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="text" v-model="searchQuery">
+
+        <p v-if="isSearching">Searching...</p>
+        <div v-else>
+            <ol>
+                <li v-for="result in results">{{ result }}</li>
+            </ol>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js'></script>
+    <script type='text/javascript'>
+        new Vue({
+            el: '#app',
+            data: {
+                searchQuery: '',
+                results: [],
+                isSearching: false
+            },
+            watch: {
+                searchQuery: function(query) {
+                    this.isSearching = true                    
+                    setTimeout(() => {
+                        this.results = ['JavaScript','PHP','Java','Kotlin']
+                        this.isSearching = false
+                    }, 1000)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
