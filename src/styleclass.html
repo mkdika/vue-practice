@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue | Sytle Class</title>
+
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="shape" v-for="shape in shapes" v-bind:class="[ shape.shape, shape.direction ? shape.direction : '', { animate: shape.animate } ]">
+
+    </div>
+  </div>
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        shapes: [
+          { shape: 'circle' },
+          { shape: 'square', animate: true },
+          { shape: 'triangle', direction: 'up' },
+          { shape: 'triangle', direction: 'right', animate: true },
+          { shape: 'triangle', direction: 'down' },
+          { shape: 'triangle', direction: 'left', animate: true }
+        ]
+      }
+    });
+  </script>
+</body>
+
+</html>
