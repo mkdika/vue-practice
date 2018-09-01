@@ -16,7 +16,7 @@
     <p>Released: {{ release }} </p>
 
     <!-- EXERCISE 2: Output whether or not the movie is old or new by using a method. The movie is old if it was released prior to year 2000. -->
-    <p>The movie is {{ movieCategory(release) }} .</p>
+    <p>The movie is {{ isMovieOld(release) }} .</p>
 
     <!-- EXERCISE 3: Bind the movie name to the "title" attribute on the following div element -->
     <div v-bind:title="title">Hover your mouse here!</div>
@@ -27,10 +27,10 @@
     new Vue({
       el: '#app',
       data: {
-        title: 'The Matrix Evolution XXX',
+        title: 'The Matrix Evolution',
         release: 1998,
       }, methods: {
-        movieCategory: function (year) {
+        isMovieOld: function (year) {
           return year < 2000 ? 'Old' : 'New';
         }
       }
