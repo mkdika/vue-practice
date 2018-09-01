@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 10 | Key Modifiers</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Key Modifier Demo</h1>
+    This input field will popup by ENTER key<br/>
+    <input type="text" width="200" v-on:keyup.enter="pressedEnter" placeholder="Press ENTER!"><br/><br/> This input field
+    will popup by ENTER & SPACE key<br/>
+    <input type="text" width="300" v-on:keyup.enter.space="pressedSomething" placeholder="Press ENTER & SPACE!">
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+      },
+      methods: {
+        pressedEnter: function () {
+          alert('You pressed the Enter Key!');
+        },
+        pressedSomething: function () {
+          alert('You pressed the Enter or Space Key!');
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 11 | Modifier Keys</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Modifier Key Demo: Ctrl, Alt, Shift, Meta(Command Key)</h1>
+    <input type="text" v-on:keyup.shift.enter="myListener" placeholder="Press SHIFT + ENTER"><br/>
+    <button v-on:click.shift="myButtonListener">Click Here While holding Shift Key!</button><br/>
+    <button v-on:click.meta="myButtonListener">Click Here While holding Command Key!</button>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+      },
+      methods: {
+        myListener: function () {
+          alert('You pressed the Shift + Enter key!');
+        },
+        myButtonListener: function() {
+          alert('You clicked the Button!');
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
