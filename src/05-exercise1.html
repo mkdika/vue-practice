@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 05 | Exercise 1</title>
+</head>
+
+<body>
+  <h1>This exercise is about Vue.Js Template, Methods, Directives</h1>
+  <div id="app">
+    <!-- EXERCISE 1: Store the title of a movie (e.g. "The Matrix") and when it was released in data properties and output them using string interpolation -->
+    <p>Title: {{ title }}</p>
+    <p>Released: {{ release }} </p>
+
+    <!-- EXERCISE 2: Output whether or not the movie is old or new by using a method. The movie is old if it was released prior to year 2000. -->
+    <p>The movie is {{ movieCategory(release) }} .</p>
+
+    <!-- EXERCISE 3: Bind the movie name to the "title" attribute on the following div element -->
+    <div v-bind:title="title">Hover your mouse here!</div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'The Matrix Evolution XXX',
+        release: 1998,
+      }, methods: {
+        movieCategory: function (year) {
+          return year < 2000 ? 'Old' : 'New';
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>
