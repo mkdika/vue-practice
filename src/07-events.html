@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue.Js 06 | Expression Directives</title>
+  <title>Vue.Js 07 | Events</title>
 </head>
-
 <body>
   <div id='app'>
-    <h1>Vue.Js Directives with Expression Demo</h1>
-    <div v-bind:title="firstName + ' ' + lastName">Hover to see my name!</div>
-    <h2><b>Tips: </b>It is fine to use expression inside directive, but we need to keep it simple!</h2>
+    <h1>Vue.Js Click Button Events Demo</h1>
+    <button>Click Me!</button>
   </div>
-
+  
   <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
   <script type='text/javascript'>
     new Vue({
       el: '#app',
       data: {
-        firstName: 'Maikel',
-        lastName: 'Chandika',
+      },
+      methods: {
+        clickedButton: function() {
+          alert('You clicked the button!');
+        }
       }
     })
   </script>
 </body>
-
 </html>
