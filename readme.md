@@ -10,6 +10,7 @@ Code snippets for Vue.Js 2 practice and features example.
   - [List of Vue.Js Event Modifier](https://vuejs.org/v2/guide/events.html#Event-Modifiers)
   - [List of Vue.Js Key Modifier](https://vuejs.org/v2/guide/events.html#Key-Modifiers)
   - [List of Vue.Js Modifier Key](https://vuejs.org/v2/guide/events.html#System-Modifier-Keys)
+  - [Vue.Js v-model Modifier](https://vuejs.org/v2/guide/forms.html#Modifiers)
 
 ## Copyright and License
 
