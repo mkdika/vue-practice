@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 15 | Conditional Rendering</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Conditional Rendering Demo</h1>
+    Items: <input type="text" v-model.trim.number="itemInStock">
+    <p v-if="itemInStock > 10">{{ itemInStock }} in stock.</p>
+    <p v-else-if="itemInStock > 0">Hurry up, there are just a few items left!</p>
+    <p v-else>Too bad, we're all out!</p>
+
+    <!-- template tag is use to prevent render, instead of using <div> -->
+    <template v-if="itemInStock > 50">
+      <p>Special offer..We are SALE!</p>
+    </template>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        itemInStock: 15
+      }
+    })
+  </script>
+</body>
+
+</html>
