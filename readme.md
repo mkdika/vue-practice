@@ -1,7 +1,7 @@
 # Vue.Js Practice
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 
-Sample & code snippets for Vue.JS practice.
+Sample & code snippets for Vue.Js 2 practice.
 
 ## References
 - [Vue.JS 2 Official Guide](https://vuejs.org/v2/guide/)
