@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue.Js 21 | Loop Number Range</title>
+  <title>Vue.Js 22 | Array Change Detection</title>
 </head>
 
 <body>
   <div id='app'>
-    <!-- This loop is inclusive in 10 means 1..10 -->
-    <ul v-for="n in 10">
-      <li>{{ nfgw }}</li> 
+    <h1>Vue.Js Array Change Detection Demo</h1>
+    <ul>
+      <li v-for="(n, index) in numbers" :key="index">{{ n }}</li>
     </ul>
+    <button v-on:click="changeNumber">Change Number</button>
   </div>
 
   <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
@@ -21,6 +22,13 @@
     new Vue({
       el: '#app',
       data: {
+        numbers: [1, 2, 3, 4, 5]
+      },
+      methods: {
+        changeNumber: function () {
+          // to force vue update the HTML DOM data.
+          Vue.set(this.numbers, 1, 10);
+        }
       }
     })
   </script>
