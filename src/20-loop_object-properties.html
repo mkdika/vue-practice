@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 20 | Loop Object</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Loop Object Properties Demo</h1>
+    <h2>Bio:</h2>
+    <ul v-for="(value, propertyName,index) in person">
+      <li>{{ index+1 }}. {{ propertyName }} : {{ value }}</li>
+    </ul>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        person: {
+          firstName: 'Maikel',
+          lastName: 'Chandika',
+          age: 30
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

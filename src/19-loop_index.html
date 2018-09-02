@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 19 | Loop Index</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Loop Index Demo</h1>
+    <h2>Employees:</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Index</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(employee, index) in employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.title }}</td>
+          <td>{{ companyName }}</td>
+          <td>{{ index+1 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        employees: [
+          { name: 'Abby', title: 'Accountant' },
+          { name: 'Andy', title: 'Marketing Manager' },
+          { name: 'Brandon', title: 'Vue.Js Expert' }
+        ],
+        companyName: 'PT.Angin Ribut'
+      }
+    })
+  </script>
+</body>
+
+</html>
