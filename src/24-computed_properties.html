@@ -32,6 +32,9 @@
           this.lastName = 'Chandika';
         }
       },
+      // Computed properties is use to not execute each time refresh
+      // and only run with element within changes.
+      // this will improve the improvement and efficient of heavy calculation.
       computed: {
         fullname: function () {
           alert("Assembling full name...");
