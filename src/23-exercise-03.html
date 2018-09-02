@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 23 | Exercise 03</title>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- Exercise 1 -->
+    <input type="password" v-model="password" placeholder="Enter your password">
+    <p>Password you typed: {{ password }}</p>
+    <br/>
+
+    <!-- Exercise 2 -->
+    <p v-if="password.length > 8">Awesome! Your password is longer than 8 character.</p>
+    <p v-else-if="password.length > 0">Please enter a longer password.</p>
+    <p v-else>Please enter a password.</p>
+    <br/>
+
+    <!-- Exercise 3 -->
+    <ol>
+      <li v-for="cat in categories">
+        <b>{{ cat.name }}</b>
+        <ul>
+          <li v-for="sub in cat.sub">{{ sub }}</li>
+        </ul>
+        <br/>
+      </li>
+    </ol>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        password: '',
+        categories: [
+          { name: 'JavaScript', sub: ['Vue.Js', 'React', 'Angular2'] },
+          { name: 'Database', sub: ['MySQL', 'PostgreSQL', 'MariaDB'] },
+          { name: 'Operating System', sub: ['OSX', 'Linux', 'Windows'] },
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>
