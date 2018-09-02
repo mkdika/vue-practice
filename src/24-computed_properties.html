@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 24 | Computed Properties</title>
+</head>
+
+<body>
+  <div id='app'>
+    <p>{{ counter }}</p>
+    <p>{{ fullname }}</p>
+
+    <button v-on:click="counter++">Increase Counter</button>
+    <button v-on:click="changeName">Change Name</button>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 1,
+        firstName: 'Maikel',
+        lastName: 'Chandika'
+      },
+      methods: {
+        changeName: function () {
+          this.firstName = 'Max';
+          this.lastName = 'Chandika';
+        }
+      },
+      computed: {
+        fullname: function () {
+          alert("Assembling full name...");
+          return this.firstName + ' ' + this.lastName;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
