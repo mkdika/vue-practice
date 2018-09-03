@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 25 | Getter Setter</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Getter & Setter Demo</h1>
+    <p>{{ counter }}</p>
+    <p>{{ fullName }}</p>
+    <p>{{ fullName }}</p>
+
+    <button v-on:click="counter++">Increase Counter</button>
+    <button v-on:click="changeName">changeName</button>
+    <button v-on:click="changeNameSetter">Change Name (Setter)</button>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 1,
+        firstName: 'Maikel',
+        lastName: 'Chandika'
+      },
+      methods: {
+        changeName: function () {
+          this.firstName = 'Max';
+        },
+        changeNameSetter: function() {
+          this.fullName = 'Mark Chandika';
+        }
+      },
+      computed: {
+        // to change the computed to getter/ setter change the function variable
+        // to object.
+        fullName: {
+          get: function () { // get function is convention
+            alert('Assembling full name...');
+            return this.firstName + ' ' + this.lastName;
+          },
+          set: function (newValue) { // set function is convention
+            alert('Setting new name: ' + newValue);
+            var parts = newValue.split(' ');
+            this.firstName = parts[0];
+            this.lastName = parts[parts.length - 1];
+          }
+        },
+      },
+    })
+  </script>
+</body>
+
+</html>
