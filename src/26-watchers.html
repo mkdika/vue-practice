@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 26 | Watcher</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Watchers Demo</h1>
+    <input type="text" v-model="searchQuery" placeholder="Fill to search something">
+    <p v-if="isSearching"><i>Searching...</i></p>
+    <div v-else>
+      <ol>
+        <li v-for="result in results">
+          {{ result }}
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        searchQuery: '',
+        results: [],
+        isSearching: false
+      },
+      watch: {
+        // the function name should be same as the data property to watwch
+        searchQuery: function (query) {
+          this.isSearching = true;
+          var vm = this; // vm is convention for local variable passing.
+          setTimeout(function () {
+            vm.results = ['JavaScript', 'PHP', 'MySQL'];
+            vm.isSearching = false;
+          }, 1000);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
