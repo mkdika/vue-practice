@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 28 | Filters</title>
+</head>
+<body>
+  <div id='app'>
+    <h1>Vue.Js Filters Demo</h1>
+    <h2>{{ message | uppercase }}</h2>
+    <h2>{{ message | capitalize(true) }}</h2>
+  </div>
+  
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World!'
+      },
+      filters: {
+        uppercase: function(value) {
+          if (!value) {
+            return '';
+          }
+          return value.toString().toUpperCase();
+        },
+        capitalize: function(value, onlyFirstChar) {
+          if (!value) {
+            return '';
+          }
+
+          value = value.toString();
+          if (onlyFirstChar) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+          }else {
+            return value.toUpperCase();
+          }
+
+        }
+      }
+    })
+  </script>
+</body>
+</html>
