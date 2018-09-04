@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.Js 31 | Shorthands</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Vue.Js Shorthands for events and bindings</h1>
+    <button v-on:click="hello">Hello (v-on)</button>
+    <button @click="hello">Hello (shorthand)</button>
+
+    <p v-bind:title="title">Hover me (v-bind)</p>
+    <p :title="title">Hover me (shorthand)</p>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
+  <script type='text/javascript'>
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Hello World!'
+      },
+      methods: {
+        hello: function () {
+          alert("Hello World!");
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
