@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.Js 32 | Components</title>
 </head>
+
 <body>
   <div id='app'>
     <h1>Vue.Js Components Demo</h1>
     <!-- can be called multiple times -->
     <contact-us></contact-us>
-    <br/>
+    <br />
     <contact-us></contact-us>
-    <br/>
+    <br />
     <contact-us></contact-us>
   </div>
-  
+
   <script src='https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js'></script>
   <script type='text/javascript'>
     Vue.component('contact-us', {
-      data: function() {
+      data: function () {
         return {
           email: 'mkdika@gmail'
         };
@@ -37,4 +39,5 @@
     })
   </script>
 </body>
+
 </html>
